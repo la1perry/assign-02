@@ -21,7 +21,7 @@ function update(id){
 return db.child(id).update(data);
 }
 
-update(4);
+update(1);
 
 
   db.once('value')

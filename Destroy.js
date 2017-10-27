@@ -12,6 +12,7 @@ firebase.initializeApp({
 
   let db=firebase.database().ref('contacts');
 
+// remove contact 
 
     function remove(id){
         db.ref.child(id).once('value', function(snapshot){
@@ -19,9 +20,31 @@ firebase.initializeApp({
         })
     }
 
-    remove(5);
+    // remove(5);
+   
+    
+function removeTarget(id){
+  
+    let deleteNode=db.child(id).child('address');
+    
+    deleteNode.once('value')
+    .then(function(snapshot){
+snapshot.ref.remove();    })
+}
+    removeTarget(1);
+    
+    // remove node
+// function removeNode(id){
+// const query=id.child('address');
+// query.remove();
+// query.orderByChild('address').equalTo('WonderWarf');
+// query.once('value', data=>console.log(data.val()));
+// .then(function(snapshot){
+// snapshot.ref.remove()})
+// }
 
-
+// const query=db.orderByChild('name').equalTo('Carl');
+// query.once('value', data=> console.log(data.val()));
 
 
     //   function removePerson(id){

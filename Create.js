@@ -24,7 +24,7 @@ function newContact(id, contact){
 }
 
 
-newContact(2,Linda);
+newContact(1,Linda);
 
 
 db.once('value')
